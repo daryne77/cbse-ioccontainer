@@ -6,6 +6,7 @@ public class Main {
         movieFinder.findById();
 
         MovieLister movieLister = (MovieLister) container.getInstance(MovieLister.class);
+        movieLister.listMovies();
     }
 
     static IOCContainer configureIOCContainer() {

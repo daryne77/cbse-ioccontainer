@@ -49,15 +49,11 @@ public class IOCContainer {
                     }
 
                     try {
-                        return constructor.newInstance(parameters);
-                    } catch (InstantiationException e) {
-                        e.printStackTrace();
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InvocationTargetException e) {
+                        return constructor.newInstance(parameters.toArray());
+                    } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
                         e.printStackTrace();
                     }
-                } catch (UnregisteredParameterException e) { }
+                } catch (UnregisteredParameterException ignored) { }
             }
         }
 
