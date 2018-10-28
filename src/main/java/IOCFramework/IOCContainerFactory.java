@@ -32,11 +32,6 @@ public class IOCContainerFactory {
             }
         }
 
-//        Object[] finderParams = {"movie.txt"};
-//        container.registerImplementation(IMovieFinder.class, MovieFinder.class);
-////        container.registerImplementation(IMovieFinder.class, MovieFinderFromFile.class, finderParams);
-//        container.registerImplementation(MovieLister.class, MovieLister.class);
-
         return container;
     }
 
