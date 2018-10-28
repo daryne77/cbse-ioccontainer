@@ -1,0 +1,15 @@
+{
+  "simpleConfig": [
+    {
+      "type": "MovieApp.MovieLister.MovieLister",
+      "implementation": "MovieApp.MovieLister.MovieLister"
+    }
+  ],
+  "paramsConfig": [
+    {
+      "type": "MovieApp.MovieFinder.IMovieFinder",
+      "implementation": "MovieApp.MovieFinder.MovieFinderFromFile",
+      "params": ["file.txt"]
+    }
+  ]
+}
