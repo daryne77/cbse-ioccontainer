@@ -11,6 +11,14 @@ public class IOCContainer {
 
     private class UnregisteredParamsException extends Exception {}
 
+    public HashMap<Class, Class> getRegisteredClasses() {
+        return (HashMap)registeredClasses.clone();
+    }
+
+    public HashMap<Class, Object[]> getRegisteredParams() {
+        return (HashMap)registeredParams.clone();
+    }
+
     void registerImplementation(Class type, Class implementationClass) {
         this.registeredClasses.put(type, implementationClass);
     }
