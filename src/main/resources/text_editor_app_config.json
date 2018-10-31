@@ -1,0 +1,15 @@
+{
+  "simpleConfig": [
+    {
+      "type": "TextEditorApp.TextEditor.TextEditor",
+      "implementation": "TextEditorApp.TextEditor.TextEditor"
+    },
+    {
+      "type": "TextEditorApp.SpellChecker.SpellChecker",
+      "implementation": "TextEditorApp.SpellChecker.UppercaseSpellChecker"
+    }
+  ],
+  "paramsConfig": [
+
+  ]
+}

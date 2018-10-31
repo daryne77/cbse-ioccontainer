@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class MovieApp {
     public static void main(String [] args) {
-        IOCContainer container = IOCContainerFactory.configureIOCContainer();
+        IOCContainer container = IOCContainerFactory.configureIOCContainer("movie_app_config.json");
 
         MovieLister movieLister = (MovieLister) container.getInstance(MovieLister.class);
         if (movieLister != null) {

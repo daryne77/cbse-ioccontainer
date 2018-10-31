@@ -1,18 +1,14 @@
 package IOCFramework;
-
-import MovieApp.MovieFinder.IMovieFinder;
-import MovieApp.MovieFinder.MovieFinder;
-import MovieApp.MovieLister.MovieLister;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 
 public class IOCContainerFactory {
 
-    public static IOCContainer configureIOCContainer() {
+    public static IOCContainer configureIOCContainer(String configFileName) {
         IOCContainer container = new IOCContainer();
 
-        Config config = getConfig();
+        Config config = getConfig(configFileName);
 
         if (config == null) return null;
 
@@ -35,14 +31,13 @@ public class IOCContainerFactory {
         return container;
     }
 
-    private static Config getConfig() {
+    private static Config getConfig(String configFileName) {
         ObjectMapper mapper = new ObjectMapper();
         try {
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-            InputStream is = classloader.getResourceAsStream("config.json");
+            InputStream is = classloader.getResourceAsStream(configFileName);
 
-            Config config = mapper.readValue(is, Config.class);
-            return config;
+            return mapper.readValue(is, Config.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
